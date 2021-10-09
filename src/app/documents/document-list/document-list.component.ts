@@ -10,11 +10,11 @@ export class DocumentListComponent implements OnInit {
   @Output() selectedDocumentEvent = new EventEmitter<Document>();
 
   documents: Document[] = [
-    new Document(1, 'Test document 1', 'Document description 1', 'test@test.com', []),
-    new Document(1, 'Test document 2', 'Document description 2', 'test@test.com', []),
-    new Document(1, 'Test document 3', 'Document description 3', 'test@test.com', []),
-    new Document(1, 'Test document 4', 'Document description 4', 'test@test.com', []),
-    new Document(1, 'Test document 5', 'Document description 5', 'test@test.com', [])
+    new Document(1, 'CSE 212 - Programming with Data Structures', 'CSE 212 description', 'https://test@test.com', []),
+    new Document(2, 'CSE 310 - Applied Programming', 'CSE 310 description', 'https://test@test.com', []),
+    new Document(3, 'WDD 331 - Advanced CSS', 'WDD 331 description', 'https://test@test.com', []),
+    new Document(4, 'WDD 430 - Web Full-Stack Development', 'WDD 430 description', 'https://test@test.com', []),
+    new Document(5, 'GS 107 - Technology Basics', 'GS 107 description', 'https://test@test.com', [])
   ]
 
   constructor() { }
