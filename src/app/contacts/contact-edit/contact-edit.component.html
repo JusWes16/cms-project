@@ -113,7 +113,7 @@
         </div>
       </div>
 
-      <div class="alert alert-danger" *ngIf=" !name.valid && name.untouched || !email.valid && email.untouched">
+      <div class="alert alert-danger" *ngIf=" !name.valid && name.touched || !email.valid && email.touched">
         The Name and Email fields are required.
       </div>
 
