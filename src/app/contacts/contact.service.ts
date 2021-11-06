@@ -24,17 +24,6 @@ export class ContactService {
     return this.contacts.slice();
   }
 
-  // Not sure why using a forecah loop didnt work unless I did it like this. The traditional for loop seems to work fine though. 
-  // getContact(id: string): Contact {
-  //   let final_contact;
-  //   this.contacts.forEach(contact => {
-  //     if(contact.id === id){
-  //       final_contact = contact;
-  //     }
-  //   });
-  //   return final_contact ?? null;
-  // }
-
   getContact(id: string): Contact {
     for (let i = 0; i < this.contacts.length; i++) {
       if (id === this.contacts[i].id) {
@@ -43,18 +32,6 @@ export class ContactService {
     }
     return null;
   }
-
-  // deleteContact(contact: Contact) {
-  //   if (!contact) {
-  //      return;
-  //   }
-  //   const pos = this.contacts.indexOf(contact);
-  //   if (pos < 0) {
-  //      return;
-  //   }
-  //   this.contacts.splice(pos, 1);
-  //   this.contactChangedEvent.emit(this.contacts.slice());
-  // }
 
   getMaxId(): number {
     let maxId = 0;
@@ -79,7 +56,7 @@ export class ContactService {
   }
 
   updateContact(originalContact: Contact, newContact: Contact) {
-    if (originalContact || newContact === undefined || null) {
+    if (originalContact === undefined || originalContact === null || newContact === undefined || newContact === null) {
       return;
     }
     let pos = this.contacts.indexOf(originalContact);

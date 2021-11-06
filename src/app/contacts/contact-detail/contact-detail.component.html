@@ -1,21 +1,43 @@
 <div class="row">
-    <div class="col-xs-12">
-        <div class="panel panel-default">
-            <div class="panel-heading contact-detail-heading">
-                <h3>{{ contact.name }}</h3>
-                <img [src]="contact.imageUrl" alt="" class="img-responsive" style="max-height: 75px;">
-                <div class="pull-right detail-buttons">
-                    <a class="btn btn-primary" type="button" [routerLink]="['../', contact.id, 'edit']">Edit</a>
-                    <a class="btn btn-danger" type="button" (click)="onDelete()">Delete</a>
-                </div>
-            </div>
-            <div class="panel-body">
-                <div class="col-xs-12">
-                    <p><b>Email: </b>{{ contact.email }}</p>
-                    <p><b>Phone: </b>{{ contact.phone }}</p>
-                </div>
-            </div>
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading contact-detail-heading">
+        <h3>{{ contact.name }}</h3>
+        <img
+          [src]="contact.imageUrl"
+          alt=""
+          class="img-responsive"
+          style="max-height: 75px"
+        />
+        <div class="pull-right detail-buttons">
+          <a
+            class="btn btn-primary"
+            type="button"
+            [routerLink]="['../', contact.id, 'edit']"
+            >Edit</a
+          >
+          <a class="btn btn-danger" type="button" (click)="onDelete()"
+            >Delete</a
+          >
         </div>
+      </div>
+      <div class="panel-body">
+        <div class="col-xs-12">
+          <p><b>Email: </b>{{ contact.email }}</p>
+          <p><b>Phone: </b>{{ contact.phone }}</p>
+          <div *ngIf=" contact.group != null ">
+            <p><b>Contacts in Team:</b></p>
+            <div *ngFor="let contact of contact.group;">
+              <div>
+                <cms-contact-item
+                  class="col-sm-11"
+                  [contact]="contact"
+                ></cms-contact-item>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-

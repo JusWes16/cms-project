@@ -77,7 +77,7 @@ export class DocumentService {
   }
 
   updateDocument(originalDocument: Document, newDocument: Document) {
-    if (originalDocument || newDocument === undefined || null) {
+    if ((originalDocument === undefined || originalDocument === null) || (newDocument === undefined || newDocument === null)) {
       return;
     }
     let pos = this.documents.indexOf(originalDocument);
@@ -91,7 +91,7 @@ export class DocumentService {
   }
 
   deleteDocument(document: Document) {
-    if (document === undefined || null) {
+    if (document === undefined || document === null) {
       return;
     }
     let pos = this.documents.indexOf(document);
