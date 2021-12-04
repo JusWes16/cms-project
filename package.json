@@ -22,8 +22,11 @@
     "bootstrap": "^3.4.1",
     "cookie-parser": "^1.4.6",
     "express": "^4.17.1",
+    "mongoose": "^6.0.14",
+    "mongoose-unique-validator": "^3.0.0",
     "morgan": "^1.10.0",
     "ng2-dnd": "^5.0.2",
+    "nodemon": "^2.0.15",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
